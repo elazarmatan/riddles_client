@@ -1,33 +1,40 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
+import { BrowserRouter, Route, Routes } from 'react-router'
+import Welcome from './pages/welcome'
 import './App.css'
+import Login from './pages/login'
+import MainPage from './pages/mainPage'
+import Crud from './pages/Crud'
+import GamePage from './pages/gamePage'
+import RiddlesPage from './pages/riddlesPage'
+import FinishGame from './pages/finishGame'
+import CreateRiddle from './pages/createRiddle'
+import ReadRiddles from './pages/readRiddles'
+import UpdateRiddle from './pages/updateRiddles'
+import DeleteRiddle from './pages/deleteRiddles'
+import Leaderboard from './pages/leaderboard'
 
 function App() {
-  const [count, setCount] = useState(0)
+  
 
   return (
     <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
+     <BrowserRouter>
+     <Routes>
+      <Route path='/' element={<Welcome/>}/>
+      <Route path='/login' element={<Login/>}/>
+      <Route path='/mainPage' element={<MainPage/>}/>
+      <Route path='/crud' element={<Crud/>}/>
+      <Route path='/create' element={<CreateRiddle/>}/>
+      <Route path='/read' element={<ReadRiddles/>}/>
+      <Route path='/update' element={<UpdateRiddle/>}/>
+      <Route path='/delete' element={<DeleteRiddle/>}/>
+      <Route path='/leaderboard' element={<Leaderboard/>}/>
+      <Route path='/gamePage' element={<GamePage/>}/>
+      <Route path='/riddles' element={<RiddlesPage/>}/>
+      <Route path='/finish' element={<FinishGame/>}/>
+      
+     </Routes>
+     </BrowserRouter>
     </>
   )
 }
