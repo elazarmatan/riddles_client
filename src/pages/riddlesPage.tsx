@@ -1,8 +1,13 @@
-import { Link } from "react-router";
+import { useNavigate } from "react-router";
 
 export default function RiddlesPage(){
+    const navigate = useNavigate()
     return <>
     <h1>show riddles</h1>
-    <Link to={'/finish'}>finish</Link>
+    <p>3 + 5</p>
+    <input type="text" placeholder="answer"/>
+    <button onClick={()=> {
+        navigate('/finish')
+    }}>submit</button>
     </>
 }

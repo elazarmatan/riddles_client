@@ -1,11 +1,23 @@
-import { Link } from "react-router";
+import {  useNavigate } from "react-router";
 
 export default function Crud(){
+    const navigate = useNavigate()
     return <>
     <h1>crud</h1>
-    <Link to={'/create'}>create</Link>
-    <Link to={'/read'}>read</Link>
-    <Link to={'/update'}>update</Link>
-    <Link to={'/delete'}>delete</Link>
+    <button onClick={() => {
+        navigate('/create')
+    }}>create</button>
+    <button onClick={() => {
+        navigate('/read')
+    }}>read</button>
+    <button onClick={() => {
+        navigate('/update')
+    }}>update</button>
+    <button onClick={() => {
+        navigate('/delete')
+    }}>delete</button>
+     <button onClick={() => {
+        navigate('/mainPage')
+    }}>home</button>
     </>
 }

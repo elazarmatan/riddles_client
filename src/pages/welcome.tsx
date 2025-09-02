@@ -1,10 +1,17 @@
-import { Link } from "react-router";
+import { Link, useNavigate } from "react-router";
 
 export default function Welcome(){
+    const navigate = useNavigate()
     return <>
     <h1>welcome</h1>
-    <Link to={'/login'}>user Exist</Link>
-    <Link to={'/login'}>new user</Link>
-    <Link to={'/gamePage'}>guest</Link>
+    <button onClick={()=> {
+        navigate('/login')
+    }}>user Exist</button>
+     <button onClick={()=> {
+        navigate('/login')
+    }}>new user</button>
+     <button onClick={()=> {
+        navigate('gamePage')
+    }}>guest</button>
     </>
 }
