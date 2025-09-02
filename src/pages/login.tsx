@@ -1,8 +1,8 @@
 import { Link } from "react-router";
 
-export default function Leaderboard(){
+export default function Login(){
     return <>
-    <h1>leaderbord</h1>
+    <h1>login</h1>
     <Link to={'/mainPage'}>mainPage</Link>
     </>
 }
