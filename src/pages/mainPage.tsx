@@ -1,10 +1,17 @@
-import { Link } from "react-router";
+import { Link, useNavigate } from "react-router";
 
 export default function MainPage(){
+    const navigate = useNavigate()
     return <>
     <h1>main page</h1>
-    <Link to={'/gamePage'}>game</Link>
-    <Link to={'/crud'}>crud</Link>
-    <Link to={'/leaderboard'}>leader board</Link>
+    <button onClick={() => {
+        navigate('/gamePage')
+    }}>game</button>
+     <button onClick={() => {
+        navigate('/crud')
+    }}>crud</button>
+     <button onClick={() => {
+        navigate('/leaderboard')
+    }}>leader board</button>
     </>
 }
