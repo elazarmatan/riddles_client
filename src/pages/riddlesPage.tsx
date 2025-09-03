@@ -6,11 +6,15 @@ export default function RiddlesPage(){
     const navigate = useNavigate()
     return <>
     <h1>show riddles</h1>
-    <p>{riddles[0].taskDescription}</p>
-    <p>{riddles[0].name}</p>
-    <input type="text" placeholder="answer"/>
-    <button onClick={()=> {
-        navigate('/finish')
-    }}>submit</button>
+    {riddles ? (
+        <>
+            <p>{riddles[0].taskDescription}</p>
+            <p>{riddles[0].name}</p>
+            <input type="text" placeholder="answer" />
+            <button onClick={() => {
+                navigate('/finish')
+            }}>submit</button>
+        </>
+    ) : <p>not riddles to load</p>}
     </>
 }
