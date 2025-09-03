@@ -1,5 +1,5 @@
-export default function loadLeaderboard(){
-    const savedata = localStorage.getItem('leader')
-    const data = savedata? JSON.parse(savedata):null
-    return data
+export default  function loadLeaderboard(setData:Function){
+     fetch('http://localhost:2030/player/getall')
+     .then(res => res.json())
+     .then(data => setData(data))
 }
