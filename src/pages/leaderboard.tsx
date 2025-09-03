@@ -6,7 +6,7 @@ export default function Leaderboard(){
     return <>
     <h1>leaderbord</h1>
     {myData?(myData.map((l:any) => (
-        <p key={l.name}>player: {l.name} time: {l.score}</p>
+        <p key={l.name}>player: {l.name} time: {l.time}</p>
     ))):<p>No data found in leaderboard</p>}
     <Link to={'/mainPage'}>mainPage</Link>
     </>
