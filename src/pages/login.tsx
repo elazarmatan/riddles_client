@@ -2,6 +2,7 @@ import { useRef } from "react";
 import { useNavigate } from "react-router";
 import login from "../utils/login";
 import createPlayer from "../utils/createPlayer";
+import saveToken from "../utils/saveToken";
 
 export default function Login(props: { login: string }) {
   const username = useRef<HTMLInputElement>(null);
@@ -25,6 +26,7 @@ export default function Login(props: { login: string }) {
               if (c === "err") {
                 alert("password or username not exist");
               } else {
+                saveToken(c)
                 navigate("/mainPage");
               }
             }
