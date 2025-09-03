@@ -1,6 +1,6 @@
 
 export default function checkToken(token:string,setToken:Function){
-    fetch(`http://localhost:2030/player/token`, {
+    fetch(`https://riddles-project.onrender.com/player/token`, {
   method: "GET",
   headers: {
     "Authorization": `Bearer ${token}`
