@@ -15,7 +15,6 @@ export default function Login(props: { login: string }) {
         <input type="password" placeholder="password" required ref={password} />
         <button
           onClick={async (e) => {
-            console.log(props.login)
             e.preventDefault();
             let auth = {
               name: username.current?.value,
@@ -23,7 +22,6 @@ export default function Login(props: { login: string }) {
             };
             if (props.login === "exist") {
               const c = await login(auth);
-              console.log(c)
               if (c === "err") {
                 alert("password or username not exist");
               } else {
