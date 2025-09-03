@@ -12,16 +12,17 @@ import ReadRiddles from './pages/readRiddles'
 import UpdateRiddle from './pages/updateRiddles'
 import DeleteRiddle from './pages/deleteRiddles'
 import Leaderboard from './pages/leaderboard'
+import { useState } from 'react'
 
 function App() {
-  
+  const [stalogin,setLogin] = useState('')
 
   return (
     <>
      <BrowserRouter>
      <Routes>
-      <Route path='/' element={<Welcome/>}/>
-      <Route path='/login' element={<Login/>}/>
+      <Route path='/' element={<Welcome setLogin={setLogin}/>}/>
+      <Route path='/login' element={<Login login={stalogin}/>}/>
       <Route path='/mainPage' element={<MainPage/>}/>
       <Route path='/crud' element={<Crud/>}/>
       <Route path='/create' element={<CreateRiddle/>}/>
