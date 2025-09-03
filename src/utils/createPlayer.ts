@@ -1,6 +1,6 @@
 export default async function createPlayer(auth: { [key: string]: any }) {
      auth.role = 'user'
-    const res = await fetch('https://riddles-project.onrender.com/player/create ', {
+    const res = await fetch('http://localhost:2030/player/create ', {
         method: 'POST',
         body: JSON.stringify(auth),
         headers: {
