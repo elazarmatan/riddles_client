@@ -1,6 +1,6 @@
 export default async function login(auth: object) {
     try {
-        const res = await fetch('https://riddles-project.onrender.com/player/login', {
+        const res = await fetch('http://localhost:2030/player/login', {
             method: 'POST',
             body: JSON.stringify(auth), 
             headers: {
