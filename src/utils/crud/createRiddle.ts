@@ -1,6 +1,6 @@
 export default function createRiddle(newRiddle:object){
     let response = {}
-     fetch('http://localhost:2030/riddle/create ', {
+     fetch('https://riddles-project.onrender.com/riddle/create ', {
         method: 'POST',
         body: JSON.stringify(newRiddle),
         headers: {
