@@ -28,7 +28,7 @@ export default function RiddlesPage() {
       setSeconds((prev) => prev + 1);
     }, 1000);
     return () => clearInterval(id);
-  }, []);
+  }, [dataRiddles]);
   useEffect(() => {
     if(counter > 5){
         navigate('/finish',{state:{seconds}})
